@@ -1,0 +1,5 @@
+Pods/
+*.dSYM
+*.xcframework
+
+
