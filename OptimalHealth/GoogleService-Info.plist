@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>95006419266-a52k756t7dkk6ltisamm71dkgjh882sk.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.95006419266-a52k756t7dkk6ltisamm71dkgjh882sk</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>95006419266-a0qlsl66vdrjkrc22brru0lgohf1dkce.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyB4YZppkTJVhnXecL10wVPf1u0upxdwIAw</string>
+	<key>GCM_SENDER_ID</key>
+	<string>95006419266</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.oditek.medilinkdocindo</string>
+	<key>PROJECT_ID</key>
+	<string>medidoc-c1ff6</string>
+	<key>STORAGE_BUCKET</key>
+	<string>medidoc-c1ff6.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:95006419266:ios:3f3875b6ee1f50384400db</string>
+</dict>
+</plist>

@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+        <title>Good Shape</title>
+        <meta content="GoodShape" name="description" />
+        <meta content="GoodShape" name="author" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv='cache-control' content='no-cache'>
+        <meta http-equiv='expires' content='0'>
+        <meta http-equiv='pragma' content='no-cache'>
+        <link rel="shortcut icon" href="assets/images/favicon.png">
+		<link rel="stylesheet" href="assets/js/morris/morris.css">
+        <link rel="stylesheet" href="assets/js/chartist/css/chartist.min.css">
+
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+        <link href="assets/css/icons.css" rel="stylesheet" type="text/css">
+        <link href="assets/css/style.css" rel="stylesheet" type="text/css">
+                
+                
+                
+        <script>
+            //var day111 = 'Mon'
+            
+            //alert("Hi");
+            
+            function sync() {
+                window.webkit.messageHandlers.jsHandler.postMessage("Sync_healthdata");
+            }
+            
+            function viewHistory() {
+                window.webkit.messageHandlers.jsHandler.postMessage("ViewHistory_healthdata");
+            }
+            
+            function enter() {
+                window.webkit.messageHandlers.jsHandler.postMessage("Enter_healthdata");
+            }
+            function sendUserHealthData(age) {
+                //alert(name);
+                document.getElementById("age").innerHTML = age;
+                //return name
+            }
+            function sendUserHealthDataDictionary(healthData) {
+                //alert(healthData);
+                var parsedJSONObject = JSON.parse(healthData);
+                
+                document.getElementById("age").innerHTML = parsedJSONObject["age"]
+                document.getElementById("weight").innerHTML = parsedJSONObject["weight"]
+                document.getElementById("height").innerHTML = parsedJSONObject["height"]
+                document.getElementById("bmi").innerHTML = parsedJSONObject["bmi"]
+                document.getElementById("temperature").innerHTML = parsedJSONObject["temperature"]
+                document.getElementById("fat").innerHTML = parsedJSONObject["fat"]
+                document.getElementById("heart_rate").innerHTML = parsedJSONObject["heart_rate"]
+                document.getElementById("steps_today").innerHTML = parsedJSONObject["steps_today"]
+                document.getElementById("steps_today_in_km").innerHTML = parsedJSONObject["steps_today_in_km"]
+                document.getElementById("cal_burned").innerHTML = parsedJSONObject["cal_burned"]
+                document.getElementById("total_sleep").innerHTML = parsedJSONObject["total_sleep"]
+                document.getElementById("deep_sleep").innerHTML = parsedJSONObject["deep_sleep"]
+                document.getElementById("light_sleep").innerHTML = parsedJSONObject["light_sleep"]
+                document.getElementById("flights_climbed_today").innerHTML = parsedJSONObject["flights_climbed_today"]
+                document.getElementById("walking_running_distance_today").innerHTML = parsedJSONObject["walking_running_distance_today"]
+                document.getElementById("heart_rate_variability").innerHTML = parsedJSONObject["heart_rate_variability"]
+                document.getElementById("blood_pressure").innerHTML = parsedJSONObject["blood_pressure"]
+                var gender = parsedJSONObject["gender"]
+                document.getElementById("blood_glucose").innerHTML = parsedJSONObject["blood_glucose"]
+                if (gender == 0)
+                {
+                    document.getElementById("gender_n").setAttribute('style', 'display:block; margin:auto;');
+                    document.getElementById("gender_m").setAttribute('style', 'display:none; margin:auto;');
+                    document.getElementById("gender_f").setAttribute('style', 'display:none; margin:auto;');
+                    document.getElementById("gender_o").setAttribute('style', 'display:none; margin:auto;');
+                }else if (gender == 1)
+                {
+                    document.getElementById("gender_n").setAttribute('style', 'display:none; margin:auto;');
+                    document.getElementById("gender_m").setAttribute('style', 'display:block; margin:auto;');
+                    document.getElementById("gender_f").setAttribute('style', 'display:none; margin:auto;');
+                    document.getElementById("gender_o").setAttribute('style', 'display:none; margin:auto;');
+                }else if (gender == 2)
+                {
+                    document.getElementById("gender_n").setAttribute('style', 'display:none; margin:auto;');
+                    document.getElementById("gender_m").setAttribute('style', 'display:none; margin:auto;');
+                    document.getElementById("gender_f").setAttribute('style', 'display:block; margin:auto;');
+                    document.getElementById("gender_o").setAttribute('style', 'display:none; margin:auto;');
+                }
+                else
+                {
+                    document.getElementById("gender_n").setAttribute('style', 'display:none; margin:auto;');
+                    document.getElementById("gender_m").setAttribute('style', 'display:none; margin:auto;');
+                    document.getElementById("gender_f").setAttribute('style', 'display:none; margin:auto;');
+                    document.getElementById("gender_o").setAttribute('style', 'display:block; margin:auto;');
+                }
+                
+                //document.getElementById("day1").innerHTML = parsedJSONObject["day1"]
+                
+            }
+            function sendUserStepsDataDictionary(healthData) {
+                //var parsedJSONObject = JSON.parse(healthData);
+                
+                //document.getElementById("steps_today").innerHTML = parsedJSONObject["steps_today"]
+                //document.getElementById("steps_today_in_km").innerHTML = parsedJSONObject["steps_today_in_km"]
+            }
+        
+            function sendHealthTipsArray(healthTipsArray) {
+                //alert(healthTipsArray);
+                
+                var parsedJSONObject = JSON.parse(healthTipsArray);
+                $(".showvlu").remove();
+                for (var i = 0; i < parsedJSONObject.length; i++) {
+                    var counter = parsedJSONObject[i];
+                   // console.log(counter.title);
+                    
+                    //alert(counter.title);
+                    $("<div class='showvlu'><div class='pt-1'><img src='"+counter.imagePath+"' alt='' class='img-responsive' style='width:100%;' /></div><h5 class='font-16 mb-1 p-0'>"+counter.title+"</h5><p class='font-14 pt-1 pb-3'>"+counter.shortDesc+"<a href='javascript:void(0)' class='moredetails'></a></p></div>").insertBefore("#viewdtl");
+                }
+                
+                //document.getElementById("steps_today").innerHTML = parsedJSONObject["steps_today"]
+                //document.getElementById("steps_today_in_km").innerHTML = parsedJSONObject["steps_today_in_km"]
+            }
+        
+        $(document).ready(function(){
+                          $.ajaxSetup({ cache: false });
+                          });
+        //$(document).ready(function(){
+            
+        //});
+        </script>
+        <style>
+            .ullistingsec ul{padding:0px; margin:0px;}
+            .ullistingsec ul li{padding:0px; margin:0px; list-style:none;}
+            .ullistingsec ul li{display:inline-block; width:50%;}
+            .smallpaddingsec{padding:1px;}
+            .ullistingsec ul li img {
+              height: 100%;
+              width: 100%;
+              object-fit: cover
+            }
+            
+            .mdi--invoice-text-scheduled-outline {
+              display: inline-block;
+              width: 2em;
+              height: 2em;
+              --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23000' d='M17 9H7V7h10zm-2 4v3.69l3.19 1.84l.75-1.3l-2.44-1.41V13zm-6 9l1.87-1.24A6.95 6.95 0 0 0 16 23c3.87 0 7-3.13 7-7c0-1.91-.76-3.64-2-4.9V3H3v19l3-2zm0-2.4l-3-2l-1 .66V5h14v4.67c-.91-.43-1.93-.67-3-.67c-1.91 0-3.64.76-4.9 2H7v2h2.67c-.43.91-.67 1.93-.67 3c0 1.12.26 2.17.73 3.11zm7 1.4c-2.76 0-5-2.24-5-5s2.24-5 5-5s5 2.24 5 5s-2.24 5-5 5'/%3E%3C/svg%3E");
+              background-color: currentColor;
+              -webkit-mask-image: var(--svg);
+              mask-image: var(--svg);
+              -webkit-mask-repeat: no-repeat;
+              mask-repeat: no-repeat;
+              -webkit-mask-size: 100% 100%;
+              mask-size: 100% 100%;
+            }
+            .mingcute-right-fill {
+              display: inline-block;
+              width: 1.5em;
+              height: 1.5em;
+              --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cpath d='M24 0v24H0V0zM12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035c-.01-.004-.019-.001-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427c-.002-.01-.009-.017-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093c.012.004.023 0 .029-.008l.004-.014l-.034-.614c-.003-.012-.01-.02-.02-.022m-.715.002a.023.023 0 0 0-.027.006l-.006.014l-.034.614c0 .012.007.02.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z'/%3E%3Cpath fill='%23000' d='M16.06 10.94a1.5 1.5 0 0 1 0 2.12l-5.656 5.658a1.5 1.5 0 1 1-2.121-2.122L12.879 12L8.283 7.404a1.5 1.5 0 0 1 2.12-2.122l5.658 5.657Z'/%3E%3C/g%3E%3C/svg%3E");
+              background-color: currentColor;
+              -webkit-mask-image: var(--svg);
+              mask-image: var(--svg);
+              -webkit-mask-repeat: no-repeat;
+              mask-repeat: no-repeat;
+              -webkit-mask-size: 100% 100%;
+              mask-size: 100% 100%;
+            }
+		</style>
+    </head>
+
+
+    <body class="fixed-left">
+
+        <!-- Loader -->
+        <!-- <div id="preloader"><div id="status"><div class="spinner"></div></div></div> -->
+
+        <!-- Begin page -->
+        <div id="wrapper">
+
+            <!-- Start right Content here -->
+
+            <div class="content-page">
+                <!-- Start content -->
+                <div class="content">
+
+                    <div class="page-content-wrapper ">
+
+                        <div class="container-fluid">
+							<div class="row topgbgcolor">
+								<div class="col-md-12 topgbgcolor p-0">
+									<div class="user-details d-none">
+										<div class="text-center">
+											<img src="assets/images/userimg1.jpg" border="0" alt="" class="rounded-circle">
+										</div>
+										<div class="user-info">
+											<h4 class="font-20 font-weight3 mb-0">Demo User</h4>
+										</div>
+									</div>
+									<div class="col-md-12 bg-white ullistingsec">
+										<ul class="row">
+											<li class="col-md-6">
+                                            <div class="smallpaddingsec"><a href="javascript:void(0)" onclick="sync()"><img src="assets/images/sync_measurement-svg.svg" border="0" alt=""/></a></div>
+                                            </li>
+											<li class="col-md-6">
+											<div class="smallpaddingsec"><a href="javascript:void(0)" onclick="enter()"><img src="assets/images/enter_measurement-svg.svg" border="0" alt=""/></a></div>
+											</li>
+										</ul>
+									</div>
+									<div class="sidebar-inner">
+										<div id="sidebar-menu">
+											<div class="leftsideheadmenu">
+												<div class="text-center">SUMMARY</div>
+												<div class="pt-4">
+													<div class="rightsideb1">
+														<ul>
+															<li>
+                                                                <span id="age">&nbsp;</span><br/>
+															Age
+															</li>
+															<li>
+															<span><span id="weight"></span> <sub>kg</sub></span><br/>
+															Weight
+															</li>
+														</ul>
+														<div class="clearfix"></div>
+													</div>
+													<div class="middlesideb1">
+														<ul>
+															<li class="text-center">
+                                                                <img src="assets/images/male.png" alt="" id="gender_m" style="display:none;"> <img src="assets/images/female.png" alt="" id="gender_f" style="display:none;"> <img src="assets/images/gender-notset.png" alt="" id="gender_n" style="display:none;"> <img src="assets/images/gender-others.png" alt="" id="gender_o" style="display:none;">
+															</li>
+															<li style="padding-top:45px !important;">
+															<span><span id="height"></span> <sub>cm</sub></span><br/>
+															Height
+															</li>
+														</ul>
+														<div class="clearfix"></div>
+													</div>
+													<div class="rightsideb1">
+														<ul>
+															<li>
+															<span id="bmi"></span><br/>
+															BMI
+															</li>
+															<li>
+															<span id="fat"></span><br/>
+															Fat
+															</li>
+														</ul>
+														<div class="clearfix"></div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="clearfix"></div>
+									</div> <!-- end sidebarinner -->
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-12 p-0">
+									<table class="table table-bordered bg-white iconsection m-0">
+										<tbody>
+										<tr>
+											<td style="width:50%;">
+												<div class="clearfix bg-white">
+													<div class="mt-0 text-center font-weight4 texttypeel">Temperature</div>
+													<div class="mini-stat-info text-center text-muted">
+														<span class="counter pt-2"><i class="mdi mdi-oil-temperature iconfont"></i> <span id="temperature" style="display:inline-block"></span></span>
+													</div>
+													<div class="temperatureg chartist-chart d-none" style="height:30px"></div>
+												</div>
+											</td>
+											<td style="width:50%;">
+												<div class="clearfix bg-white">
+													<div class="mt-0 text-center font-weight4 texttypeel">Calories Burned</div>
+													<div class="mini-stat-info text-center text-muted">
+                                                        <span class="counter pt-2"><i class="mdi mdi-fire iconfont"></i><span id="cal_burned" style="display:inline-block"></span></span>
+													</div>
+													<div class="burnedg chartist-chart d-none" style="height:30px"></div>
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<td>
+												<div class="clearfix bg-white">
+													<div class="mt-0 text-center font-weight4 texttypeel">Heart Rate</div>
+													<div class="mini-stat-info text-center text-muted">
+														<span class="counter pt-2"><i class="mdi mdi-heart iconfont"></i><span id="heart_rate" style="display:inline-block"></span></span>
+													</div>
+													<div class="rateg chartist-chart d-none" style="height:30px"></div>
+												</div>
+											</td>
+											<td>
+                                                <div class="clearfix bg-white">
+                                                    <div class="mt-0 text-center font-weight4 texttypeel">Heart Rate Variability</div>
+                                                    <div class="mini-stat-info text-center text-muted">
+                                                        <span class="counter pt-2"><i class="mdi mdi-heart-pulse iconfont"></i><span id="heart_rate_variability" style="display:inline-block"></span></span>
+                                                    </div>
+                                                    <div class="heartratevar chartist-chart d-none" style="height:30px"></div>
+                                                </div>
+											</td>
+										</tr>
+                                        <tr>
+                                            <td>
+                                                <div class="clearfix bg-white">
+                                                    <div class="mt-0 text-center font-weight4 texttypeel">Blood Pressure</div>
+                                                    <div class="mini-stat-info text-center text-muted">
+                                                        <span class="counter pt-2"><i class="mdi mdi-pulse iconfont"></i><span id="blood_pressure" style="display:inline-block"></span></span>
+                                                    </div>
+                                                    <div class="bloodpress chartist-chart d-none" style="height:30px"></div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <div class="clearfix bg-white">
+                                                    <div class="mt-0 text-center font-weight4 texttypeel">Total Sleep Time</div>
+                                                    <div class="mini-stat-info text-center text-muted">
+                                                        <span class="counter pt-2"><i class="mdi mdi-timer iconfont"></i><span id="total_sleep" style="display:inline-block"></span></span>
+                                                    </div>
+                                                    <div class="row totalhsecv">
+                                                        <div class="col-6"><span><span id="deep_sleep" style="display:inline-block"></span></span><br/>Deep</div>
+                                                        <div class="col-6"><span><span id="light_sleep" style="display:inline-block"></span></span><br/>Light</div>
+                                                        <div class="clearfix"></div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+										<tr>
+                                            <td>
+                                                <div class="clearfix bg-white">
+                                                    <div class="mt-0 text-center font-weight4 texttypeel">Flights Climbed Today</div>
+                                                    <div class="mini-stat-info text-center text-muted">
+                                                        <span class="counter pt-2"><i class="mdi mdi-stairs iconfont"></i><span id="flights_climbed_today" style="display:inline-block"></span>
+                                                            </div>
+                                                    <div class="row totalhsecv">
+                                                        <div class="col-12 text-center"><p>Floors</p></div>
+                                                    </div>
+                                                </div>
+                                            </td>
+											<td>
+												<div class="clearfix bg-white">
+													<div class="mt-0 text-center font-weight4 texttypeel">Steps Today</div>
+													<div class="mini-stat-info text-center text-muted">
+														<span class="counter pt-2"><i class="mdi mdi-walk iconfont"></i><span id="steps_today" style="display:inline-block"></span>
+													</div>
+													<div class="row totalhsecv">
+														<div class="col-12 text-center"><p id="steps_today_in_km"></p></div>
+													</div>
+												</div>
+											</td>
+										</tr>
+                                        <tr>
+                                            <td colspan="2">
+                                                <div class="clearfix bg-white">
+                                                    <div class="mt-0 text-center font-weight4 texttypeel">Blood Glucose Level (mmol/L)</div>
+                                                    <div class="mini-stat-info text-center text-muted">
+                                                        <span class="counter pt-2">
+                                                            <span id="blood_glucose" style="display:inline-block"></span>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2">
+                                                <div class="clearfix bg-white">
+                                                    <div class="mt-0 text-center font-weight4 texttypeel">Walking + Running Distance Today</div>
+                                                    <div class="mini-stat-info text-center text-muted">
+                                                        <span class="counter pt-2"><i class="mdi mdi-run iconfont"></i> <span id="walking_running_distance_today" style="display:inline-block"></span>
+                                                            </div>
+                                                    <div class="row totalhsecv">
+                                                        <div class="col-12 text-center"><p id="walking_running_distance_today"></p></div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+                            <div class="row">
+                                <div class="col-md-12 bg-white">
+                                    <div class="mt-0 text-center font-weight4 texttypeel pt-3">Weekly Step Count</div>                                          
+                                    <div id="morris-top-example" style="height:120px;"></div>
+                            <!--</div>
+                                <div class="col-md-12 p-0">
+                                    <div class="pb-2">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <h4 class="mt-0 font-18 text-center">HEALTH TIPS</h4>
+                                                <div id="viewdtl">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card d-none">
+                                            <div class="card-body">
+                                                <h4 class="mt-0 font-18 text-center">HEALTH TIPS</h4>
+                                                <div class="pt-1">
+                                                    <img src="assets/images/small/img-1.jpg" alt="" class="img-responsive" style="width:100%;" />
+                                                </div>
+                                                <h5 class="font-16 mb-1 p-0">Will you bw onw of the more...</h5>
+                                                <p class="font-14 pt-1 pb-3">
+                                                Will you be one of the more than 100 million Americans runing into the Super Bowl to watch the Patrots vs. the Seahawks? If so, beware of the blitz on chips and dip, nachos, wings, pizza and beer. These football faves can quickly pile on more than 3,500 calories (nearly two days' worth) <a href="javascript:void(0)" class="moredetails">MORE</a>
+                                                </p>
+                                                <div class="pt-1">
+                                                    <img src="assets/images/small/img-1.jpg" alt="" class="img-responsive" style="width:100%;" />
+                                                </div>
+                                                <h5 class="font-16 mb-1 p-0">Will you bw onw of the more...</h5>
+                                                <p class="font-14 pt-1 pb-3">
+                                                Will you be one of the more than 100 million Americans runing into the Super Bowl to watch the Patrots vs. the Seahawks? If so, beware of the blitz on chips and dip, nachos, wings, pizza and beer. These football faves can quickly pile on more than 3,500 calories (nearly two days' worth) <a href="javascript:void(0)" class="moredetails">MORE</a>
+                                                </p><div class="pt-1">
+                                                    <img src="assets/images/small/img-1.jpg" alt="" class="img-responsive" style="width:100%;" />
+                                                </div>
+                                                <h5 class="font-16 mb-1 p-0">Will you bw onw of the more...</h5>
+                                                <p class="font-14 pt-1 pb-3">
+                                                Will you be one of the more than 100 million Americans runing into the Super Bowl to watch the Patrots vs. the Seahawks? If so, beware of the blitz on chips and dip, nachos, wings, pizza and beer. These football faves can quickly pile on more than 3,500 calories (nearly two days' worth) <a href="javascript:void(0)" class="moredetails">MORE</a>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>-->
+							
+
+
+                            <!-- end row -->
+
+
+                        </div><!-- container -->
+
+
+                    </div> <!-- Page content Wrapper -->
+                            <div class="row">
+                                <div class="col-md-12 p-0">
+                                    <table class="table table-bordered bg-white iconsection m-0">
+                                        <tbody>
+                                        <tr>
+                                            <td colspan="2">
+                                                <div class="clearfix bg-white">
+                                                    <div class="mt-0 text-center font-weight4 texttypeel">
+                                                        <i class="mdi mdi--invoice-text-scheduled-outline iconfont"></i>
+                                                    </div>
+                                                    <div class="mt-0 text-center font-weight4 texttypeel">
+                                                        History
+                                                    </div>
+                                                </div>
+                                                <span onclick="viewHistory()" style="position: absolute;right: 30px;top: 35px;" class="mingcute-right-fill"></span>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td colspan="2">
+                                                <div class="clearfix bg-white">
+                                                    <div class="mt-0 text-center font-weight4 texttypeel">Trends</div>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                </div> <!-- content -->
+
+            </div>
+            <!-- End Right content here -->
+
+        </div>
+        <!-- END wrapper -->
+
+
+        <!-- jQuery  -->
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/popper.min.js"></script>
+        <script src="assets/js/bootstrap.min.js"></script>
+        <script src="assets/js/modernizr.min.js"></script>
+		<script src="assets/js/morris/morris.min.js"></script>
+        <script src="assets/js/raphael/raphael-min.js"></script>
+		<script src="assets/js/chartist/js/chartist.min.js"></script>
+        <script src="assets/js/chartist/js/chartist-plugin-tooltip.min.js"></script>
+        <!-- App js -->
+        
+        <script>
+             function getstepdata(stepsVal){
+                 
+                 var parsedJSONObject = JSON.parse(stepsVal);
+                 //alert(parsedJSONObject[0].title);
+                 //[{"title": "Fri", "value": 126}, {"value": 65, "title": "Thu"}, {"value": 42, "title": "Wed"}, {"title": "Tue", "value": 24}, {"title": "Mon", "value": 0}, {"value": 0, "title": "Sun"}, {"title": "Sat", "value": 0}]
+                 //var day11 = parsedJSONObject["day1"]
+                 //alert(day11);
+                 //var day1 = "Mon";
+                 //var day1Value = 60;
+                 //[{'y': 'Mon','a': 60},{'y': 'Tue','a': 70}]
+                 Morris.Bar({
+                 element: 'morris-top-example',
+                 stacked: true,
+                 /*
+                 data: [
+                   { y: 'Mon', a: 80 },
+                   { y: 'Tue', a: 150 },
+                   { y: 'Wed', a: 60},
+                   { y: 'Thu', a: 180},
+                   { y: 'Fri', a: 90},
+                   { y: 'Sat', a: 75},
+                   { y: 'Sun', a: 40},
+                 ],*/
+                 
+                 
+                 data: parsedJSONObject,
+                 barColors:['#005181'],
+                 xkey: 'y',
+                 ykeys: ['a'],
+                 //ykeys: ['a'],
+                 labels: ['Step'],
+                 gridLineColor: '#fff',
+                 axes: false,
+                 hideHover: 'auto',
+                 });
+                           
+             }
+        //var parsedJSONObject = JSON.parse(stepsVal);
+        //alert(stepsVal);
+        
+        //var day1 = parsedJSONObject["day1"]
+        //var day1Value = parsedJSONObject["day1Value"]
+        //alert(stepsVal);
+        
+                       
+        </script>
+    </body>
+</html>

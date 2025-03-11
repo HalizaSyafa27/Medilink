@@ -1,0 +1,6 @@
+framework module RSKImageCropperSwift {
+  umbrella header "RSKImageCropperSwift-umbrella.h"
+
+  export *
+  module * { export * }
+}

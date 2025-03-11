@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "filename" : "my_employee_enmt_bnft.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "my_employee_enmt_bnft-1.png",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "my_employee_enmt_bnft-2.png",
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
