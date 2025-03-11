@@ -1,6 +1,0 @@
-framework module QiscusMultichannelWidget {
-  umbrella header "QiscusMultichannelWidget-umbrella.h"
-
-  export *
-  module * { export * }
-}

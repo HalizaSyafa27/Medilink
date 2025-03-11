@@ -1,6 +1,0 @@
-framework module Pods_OptimalHealth {
-  umbrella header "Pods-OptimalHealth-umbrella.h"
-
-  export *
-  module * { export * }
-}
