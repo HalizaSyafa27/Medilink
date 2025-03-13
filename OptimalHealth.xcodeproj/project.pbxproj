@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4B1F6FAF2D8142FB00288A68 /* ZoomImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1F6FAE2D8142FB00288A68 /* ZoomImageViewController.swift */; };
 		535DE9B37213F4478E2FFEC1 /* Pods_OptimalHealthUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27EB1F6A2EC7DE793ABEE3AD /* Pods_OptimalHealthUITests.framework */; };
 		7D3FCA5D2715656A00A92B4F /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3FCA5C2715656A00A92B4F /* BaseViewController.swift */; };
 		7D3FCA68271569E800A92B4F /* PresentationControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3FCA67271569E800A92B4F /* PresentationControllerViewController.swift */; };
@@ -277,6 +278,7 @@
 /* Begin PBXFileReference section */
 		27EB1F6A2EC7DE793ABEE3AD /* Pods_OptimalHealthUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OptimalHealthUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3B7C8C97B039D076EE038E7D /* Pods-OptimalHealth.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OptimalHealth.debug.xcconfig"; path = "Target Support Files/Pods-OptimalHealth/Pods-OptimalHealth.debug.xcconfig"; sourceTree = "<group>"; };
+		4B1F6FAE2D8142FB00288A68 /* ZoomImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomImageViewController.swift; sourceTree = "<group>"; };
 		4DE694506FBB76380329DD43 /* Pods_OptimalHealthTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OptimalHealthTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7121317949CA8DC9864FA348 /* Pods-OptimalHealthUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OptimalHealthUITests.debug.xcconfig"; path = "Target Support Files/Pods-OptimalHealthUITests/Pods-OptimalHealthUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		789E705FEDB1E2B5BF3A6F20 /* Pods_OptimalHealth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OptimalHealth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -693,6 +695,7 @@
 				9392D245213FEB200050C53B /* SubMenuViewController.swift */,
 				9320A51B211435B800435EBC /* TermsConditionsController.swift */,
 				937A7B462AA07FD800B3E501 /* TermsConditionViewController.swift */,
+				4B1F6FAE2D8142FB00288A68 /* ZoomImageViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -1773,6 +1776,7 @@
 				935FE5BF2146563000CFF319 /* HealthAdvisoryMessagesTableViewCell.swift in Sources */,
 				9390290F21A6EEAD004FA40C /* HealthOptimizationTipsDetailsViewController.swift in Sources */,
 				9355F4A1211880D100BED43E /* ChooseOptionViewController.swift in Sources */,
+				4B1F6FAF2D8142FB00288A68 /* ZoomImageViewController.swift in Sources */,
 				9389E20423E992FF009739F7 /* CustomView.swift in Sources */,
 				933C011F2446D6510081C839 /* RegisterTouchIdPinViewController.swift in Sources */,
 				933C01172446D5150081C839 /* RegisterTouchIdViewController.swift in Sources */,
@@ -2026,9 +2030,9 @@
 				CODE_SIGN_ENTITLEMENTS = OptimalHealth/OptimalHealth.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 9;
+				CURRENT_PROJECT_VERSION = 10;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = B997PZZZ5H;
+				DEVELOPMENT_TEAM = 5CCCQW7FJ8;
 				ENABLE_BITCODE = NO;
 				EXCLUDED_ARCHS = "";
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
@@ -2036,8 +2040,8 @@
 				INFOPLIST_KEY_CFBundleDisplayName = MediDoc;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 2.10;
-				PRODUCT_BUNDLE_IDENTIFIER = com.oditek.medilinkdocindo;
+				MARKETING_VERSION = 2.11;
+				PRODUCT_BUNDLE_IDENTIFIER = com.medilink.appname;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -2064,9 +2068,9 @@
 				CODE_SIGN_ENTITLEMENTS = OptimalHealth/OptimalHealth.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 9;
+				CURRENT_PROJECT_VERSION = 10;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = B997PZZZ5H;
+				DEVELOPMENT_TEAM = 5CCCQW7FJ8;
 				ENABLE_BITCODE = NO;
 				EXCLUDED_ARCHS = "";
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
@@ -2074,9 +2078,9 @@
 				INFOPLIST_KEY_CFBundleDisplayName = MediDoc;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 2.10;
+				MARKETING_VERSION = 2.11;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.oditek.medilinkdocindo;
+				PRODUCT_BUNDLE_IDENTIFIER = com.medilink.appname;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";

@@ -21,6 +21,7 @@ class ViewDocumentViewController: UIViewController, UICollectionViewDataSource ,
     var prevPolicyCell:Int = 0
     var pageHeader: String = ""
     var scrolledToIndex = 0
+    var selectedIndex: Int = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -74,12 +75,29 @@ class ViewDocumentViewController: UIViewController, UICollectionViewDataSource ,
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+//        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ViewImageCollectionViewCell", for: indexPath) as! ViewImageCollectionViewCell
+//        
+//        let imgBo = self.arrImages[indexPath.row]
+//        cell.imgViewDoc.image = imgBo.image
+//        
+//        
+//        return cell
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ViewImageCollectionViewCell", for: indexPath) as! ViewImageCollectionViewCell
-        
+
         let imgBo = self.arrImages[indexPath.row]
         cell.imgViewDoc.image = imgBo.image
-        
-        
+
+        // Pastikan imgViewDoc bisa menerima gesture
+        cell.imgViewDoc.isUserInteractionEnabled = true
+        cell.imgViewDoc.tag = indexPath.row
+
+        // Hapus gesture sebelumnya agar tidak dobel
+        cell.imgViewDoc.gestureRecognizers?.forEach { cell.imgViewDoc.removeGestureRecognizer($0) }
+
+        // Tambahkan gesture untuk membuka ZoomImageViewController
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleImageTap(_:)))
+        cell.imgViewDoc.addGestureRecognizer(tapGesture)
+
         return cell
     }
     func collectionView(_ collectionView: UICollectionView,
@@ -127,19 +145,43 @@ class ViewDocumentViewController: UIViewController, UICollectionViewDataSource ,
         
         
     }
+    
+    @objc func handleImageTap(_ sender: UITapGestureRecognizer) {
+//        let tappedIndex = sender.view?.tag ?? 0
+//            showZoomImageViewController(for: tappedIndex)
+        let tappedIndex = sender.view?.tag ?? 0
+            print("Gambar di ViewDocumentViewController dengan index \(tappedIndex) diklik") // Debugging
+            showZoomImageViewController(for: tappedIndex)
+    }
+
+    func showZoomImageViewController(for index: Int) {
+//        selectedIndex = index  // ✅ Simpan index sebelum membuka ZoomImageViewController
+//        let zoomVC = storyboard?.instantiateViewController(withIdentifier: "ZoomImageViewController") as! ZoomImageViewController
+//        zoomVC.selectedImage = arrImages[index].image
+//        self.present(zoomVC, animated: true, completion: nil)
+//        selectedIndex = index
+        print("Segue ke showZoomImage dipanggil dari ViewDocumentViewController") 
+        performSegue(withIdentifier: "showZoomImage", sender: self)
+    }
+    
     func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         print("visible cell is: \(indexPath.row)")
     }
     
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        self.view.endEditing(true)
+        if segue.identifier == "viewDoc" {
+            let vc = segue.destination as! ViewDocumentViewController
+            vc.arrImages = arrImages
+            vc.pageHeader = pageHeader
+            vc.scrolledToIndex = selectedIndex
+            print("Segue ke ViewDocumentViewController dengan index: \(selectedIndex)")
+        } else if segue.identifier == "showZoomImage" {
+            let zoomVC = segue.destination as! ZoomImageViewController
+            zoomVC.selectedImage = arrImages[selectedIndex].image
+            print("Segue ke ZoomImageViewController dengan index: \(selectedIndex)")
+        }
     }
-    */
 
 }

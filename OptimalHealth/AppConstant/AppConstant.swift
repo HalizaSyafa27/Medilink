@@ -22,13 +22,13 @@ class AppConstant: NSObject {
 //    static var server = "https://app.medilink.co.id/MobileApiv2"
     
     // UAT INDO (AWS)
-//    static var server = "https://uat.medilink.co.id/MobileapiV2"
+    static var server = "https://uat.medilink.co.id/MobileapiV2"
     
     //UAT MALAY
 //    static var server = "https://medilinkuatext.medibridgeasia.tech/mdindmobileapi"
     
     //LOCAL
-    static var server = "http://192.168.1.54:55789"
+//    static var server = "http://192.168.1.54:55789"
     
     static var baseUrl : String = server + "/api/OptimalHealthv2/"
     

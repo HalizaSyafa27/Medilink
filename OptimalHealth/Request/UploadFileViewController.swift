@@ -10,7 +10,7 @@ import UIKit
 import Alamofire
 
 class UploadFileViewController: BaseViewController,UITableViewDelegate,UITableViewDataSource,UIPickerViewDelegate,UIImagePickerControllerDelegate , UIPopoverControllerDelegate , UINavigationControllerDelegate {
-
+    
     @IBOutlet var viewSubmit: UIView!
     @IBOutlet var lblInfo: UILabel!
     @IBOutlet var tblAttachments: UITableView!
@@ -127,7 +127,7 @@ class UploadFileViewController: BaseViewController,UITableViewDelegate,UITableVi
         super.viewWillAppear(animated)
         AppConstant.isClaimSubmitted = false
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -208,8 +208,22 @@ class UploadFileViewController: BaseViewController,UITableViewDelegate,UITableVi
     }
     
     @objc func showImageeAction(_ sender: UITapGestureRecognizer) {
-        selectedIndex = (sender.view?.tag)!
-        self.performSegue(withIdentifier: "viewDoc", sender: self)
+//        selectedIndex = (sender.view?.tag)!
+//        self.performSegue(withIdentifier: "viewDoc", sender: self)
+        if let tappedView = sender.view {
+                let index = tappedView.tag
+                print("Gambar dengan index \(index) diklik") // Debugging
+                selectedIndex = index
+
+                let touchCount = sender.numberOfTouches
+                if touchCount == 2 {  // Jika double tap, langsung zoom
+                    print("Segue ke showZoomImage dipanggil")
+                    self.performSegue(withIdentifier: "showZoomImage", sender: self)
+                } else {  // Jika single tap, buka ViewDocumentViewController dulu
+                    print("Segue ke viewDoc dipanggil")
+                    self.performSegue(withIdentifier: "viewDoc", sender: self)
+                }
+            }
     }
     
     @IBAction func btnAgreeToTerms (_ sender: UIButton) {
@@ -219,7 +233,7 @@ class UploadFileViewController: BaseViewController,UITableViewDelegate,UITableVi
     
     @objc func agreeToTermsLink (_ sender: UITapGestureRecognizer) {
         self.displayAlert(message: "Term of Use\n I understand and acknowledge that advice, messages, are for informational purpose only and DOES NOT CONSTITUTE THE PROVIDING OF MEDICAL ADVICE and is not intended to be a substitute for independent professional medical judgement, advice, diagnosis, or treatment.")
-        }
+    }
     
     //MARK: Image Picker Delegate
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
@@ -232,64 +246,68 @@ class UploadFileViewController: BaseViewController,UITableViewDelegate,UITableVi
             let uploadImgBo = UploadImageBo()
             var imgData: NSData = pickedImage.jpegData(compressionQuality: 1.0)! as NSData
             
-            let sizeInMB = Double(imgData.length) / 1024.0/1024.0
-            let sizeInKB = Double(imgData.length) / 1024.0
+            //            let sizeInMB = Double(imgData.length) / 1024.0/1024.0
+            //            let sizeInKB = Double(imgData.length) / 1024.0
             
-            let bPreBitmap = imgData.length // Ukuran asli dalam byte
+            // Hitung ukuran gambar dalam pixel (bitmap)
+                   let bitmapWidth = Int(pickedImage.size.width)
+                   let bitmapHeight = Int(pickedImage.size.height)
+                   let bPreBitmap = bitmapWidth * bitmapHeight
             
-//            print("Before Compression size of image in KB: %f ", sizeInKB)
-//            print("Before Compression size of image in KB: %f ", sizeInMB)
+            //            print("Before Compression size of image in KB: %f ", sizeInKB)
+            //            print("Before Compression size of image in KB: %f ", sizeInMB)
             
-            print("Before Compression size: \(Double(bPreBitmap) / 1024.0) KB")
-            
-            var finalImage = pickedImage
+            print("Before Compression - Width: \(bitmapWidth), Height: \(bitmapHeight), bPreBitmap: \(bPreBitmap)")
 
-//            if let image = pickedImage.compressTo(Int(1*1024*1024)){
-//                //let image = pickedImage.compressTo(Int(0.5*1024*1024))
-//                if let imagedat = image.jpegData(compressionQuality: 0.5) as NSData?{
-//                    imgData = imagedat
-//                }
-//                if (Double(imgData.length / 1024) > 50) && (Double(imgData.length / 1024) < 100){
-//                    if let thumb1 = image.resized(withPercentage: 0.5){
-//                        if let imagedat = thumb1.jpegData(compressionQuality: 0.5) as NSData?{
-//                            imgData = imagedat
-//                        }
-//                    }
-//                }else if (Double(imgData.length / 1024) > 100) && (Double(imgData.length / 1024) < 200){
-//                    if let thumb1 = image.resized(withPercentage: 0.5){
-//                        if let imagedat = thumb1.jpegData(compressionQuality: 0.5) as NSData?{
-//                            imgData = imagedat
-//                        }
-//                    }
-//                }else if (Double(imgData.length / 1024) > 200) && (Double(imgData.length / 1024) < 400){
-//                    if let thumb1 = image.resized(withPercentage: 0.5){
-//                        if let imagedat = thumb1.jpegData(compressionQuality: 0.5) as NSData?{
-//                            imgData = imagedat
-//                        }
-//                    }
-//                }else if Double(imgData.length / 1024) > 500{
-//                    if let thumb1 = image.resized(withPercentage: 0.3){
-//                        if let imagedat = thumb1.jpegData(compressionQuality: 0.5) as NSData?{
-//                            imgData = imagedat
-//                        }
-//                    }
-//                }
-//            }
+            var finalImage = pickedImage
+            
+            //            if let image = pickedImage.compressTo(Int(1*1024*1024)){
+            //                //let image = pickedImage.compressTo(Int(0.5*1024*1024))
+            //                if let imagedat = image.jpegData(compressionQuality: 0.5) as NSData?{
+            //                    imgData = imagedat
+            //                }
+            //                if (Double(imgData.length / 1024) > 50) && (Double(imgData.length / 1024) < 100){
+            //                    if let thumb1 = image.resized(withPercentage: 0.5){
+            //                        if let imagedat = thumb1.jpegData(compressionQuality: 0.5) as NSData?{
+            //                            imgData = imagedat
+            //                        }
+            //                    }
+            //                }else if (Double(imgData.length / 1024) > 100) && (Double(imgData.length / 1024) < 200){
+            //                    if let thumb1 = image.resized(withPercentage: 0.5){
+            //                        if let imagedat = thumb1.jpegData(compressionQuality: 0.5) as NSData?{
+            //                            imgData = imagedat
+            //                        }
+            //                    }
+            //                }else if (Double(imgData.length / 1024) > 200) && (Double(imgData.length / 1024) < 400){
+            //                    if let thumb1 = image.resized(withPercentage: 0.5){
+            //                        if let imagedat = thumb1.jpegData(compressionQuality: 0.5) as NSData?{
+            //                            imgData = imagedat
+            //                        }
+            //                    }
+            //                }else if Double(imgData.length / 1024) > 500{
+            //                    if let thumb1 = image.resized(withPercentage: 0.3){
+            //                        if let imagedat = thumb1.jpegData(compressionQuality: 0.5) as NSData?{
+            //                            imgData = imagedat
+            //                        }
+            //                    }
+            //                }
+            //            }
             
             if bPreBitmap > 1_000_000 && bPreBitmap <= 3_000_000{
                 //if ukuran  1MB - 3MB, resize ke 50%
                 if let resizedImage = pickedImage.resized(withPercentage: 0.5) {
-                                finalImage = resizedImage
-                            }
+                    finalImage = resizedImage
+                    print("Resize berhasil! Ukuran baru: \(finalImage.size.width) x \(finalImage.size.height)")
+                }
             } else if bPreBitmap > 3_000_000 {
-                // Jika ukuran lebih dari 3MB, resize ke 30%
+                // if ukuran lebih dari 3MB, resize ke 30%
                 if let resizedImage = pickedImage.resized(withPercentage: 0.3) {
                     finalImage = resizedImage
                 }
             }
             
-            // Kompresi gambar yang sudah di-resize atau yang original jika tidak perlu resize
-            if let compressedData = finalImage.jpegData(compressionQuality: 0.7) as NSData? {
+            // compress gambar yang sudah di-resize atau yang original jika tidak perlu resize
+            if let compressedData = finalImage.jpegData(compressionQuality: 0.9) as NSData? {
                 imgData = compressedData
             }
             
@@ -297,13 +315,13 @@ class UploadFileViewController: BaseViewController,UITableViewDelegate,UITableVi
             
             let sizeKB = Double(imgData.length / 1024)
             
-//            print("After Compression size of image in KB: %f ", Double(imgData.length) / 1024.0)
-//            print("After Compression size of image in MB: %f ", Double(imgData.length) / 1024.0/1024.0)
+            //            print("After Compression size of image in KB: %f ", Double(imgData.length) / 1024.0)
+            //            print("After Compression size of image in MB: %f ", Double(imgData.length) / 1024.0/1024.0)
             
             let timestamp = Int(NSDate().timeIntervalSince1970)
             uploadImgBo.name = String("\(timestamp).PNG")
             uploadImgBo.size = "\(imgData.length / 1024) KB"
-//            uploadImgBo.size = String("\(sizeKB) KB")
+            //            uploadImgBo.size = String("\(sizeKB) KB")
             uploadImgBo.imgData = imgData
             
             //uploadImgBo.image = pickedImage
@@ -325,15 +343,30 @@ class UploadFileViewController: BaseViewController,UITableViewDelegate,UITableVi
         cell.selectionStyle = .none
         let item = self.arrImages[indexPath.row]
         cell.imgViewAttachment.image = item.image
+        
+        // Pastikan imgViewAttachment bisa diklik
+        cell.imgViewAttachment.isUserInteractionEnabled = true
+        cell.imgViewAttachment.tag = indexPath.row
+        
+        cell.imgViewAttachment.gestureRecognizers?.forEach { cell.imgViewAttachment.removeGestureRecognizer($0) }
+        
+        // Tambahkan gesture recognizer untuk zoom
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.showImageeAction(_:)))
+        cell.imgViewAttachment.addGestureRecognizer(tapGesture)
+        
+        //        cell.lblFileName.text = item.name
+        //        cell.lblFileSize.text = "File Size : \(item.size!)"
+        //        cell.btnRemove.tag = indexPath.row
+        //        cell.btnRemove.addTarget(self, action: #selector(removeFileAction(_:)), for: .touchUpInside)
+        //        cell.imgViewAttachment.tag = indexPath.row
+        //
+        //        let tap = UITapGestureRecognizer(target: self, action: #selector(self.showImageeAction(_:)))
+        //        cell.imgViewAttachment.addGestureRecognizer(tap)
+        //        cell.imgViewAttachment.isUserInteractionEnabled = true
         cell.lblFileName.text = item.name
         cell.lblFileSize.text = "File Size : \(item.size!)"
         cell.btnRemove.tag = indexPath.row
         cell.btnRemove.addTarget(self, action: #selector(removeFileAction(_:)), for: .touchUpInside)
-        cell.imgViewAttachment.tag = indexPath.row
-        
-        let tap = UITapGestureRecognizer(target: self, action: #selector(self.showImageeAction(_:)))
-        cell.imgViewAttachment.addGestureRecognizer(tap)
-        cell.imgViewAttachment.isUserInteractionEnabled = true
         
         return cell
     }
@@ -452,8 +485,8 @@ class UploadFileViewController: BaseViewController,UITableViewDelegate,UITableVi
                                     
                                     //Service call to upload attachments
                                     self.serviceCallToUploadAttachments()
-                                   
-                                //self.serviceCallToUploadAttachmentForRequests()
+                                    
+                                    //self.serviceCallToUploadAttachmentForRequests()
                                     
                                 }else{
                                     //Failure
@@ -475,7 +508,7 @@ class UploadFileViewController: BaseViewController,UITableViewDelegate,UITableVi
                         break
                         
                     }
-            }
+                }
         }else{
             self.displayAlert(message: "Please check your internet connection.")
         }
@@ -498,11 +531,11 @@ class UploadFileViewController: BaseViewController,UITableViewDelegate,UITableVi
             print("params===\(params)")
             print("url===\(AppConstant.postDeactivateClaimUrl)")
             AFManager.request( AppConstant.postDeactivateClaimUrl, method: .post, parameters: params, encoding: JSONEncoding.default, headers: headers)
-
+            
                 .responseString { response in
                     AppConstant.hideHUD()
                     debugPrint(response)
-
+                    
                     switch(response.result) {
                     case .success(_):
                         let headerStatusCode : Int = (response.response?.statusCode)!
@@ -534,15 +567,15 @@ class UploadFileViewController: BaseViewController,UITableViewDelegate,UITableVi
                                 AppConstant.showNetworkAlertMessage(apiName: AppConstant.postDeactivateClaimUrl)
                             }
                         }
-
+                        
                         break
-
+                        
                     case .failure(_):
                         AppConstant.showNetworkAlertMessage(apiName: AppConstant.postDeactivateClaimUrl)
                         break
-
+                        
                     }
-            }
+                }
             
         }else{
             self.displayAlert(message: "Please check your internet connection.")
@@ -573,61 +606,61 @@ class UploadFileViewController: BaseViewController,UITableViewDelegate,UITableVi
                         parameters["pstUploadFileName"] = imagesBo.name!
                         multipartFormData.append(imgData!, withName: "pstUploadFileData", fileName: imagesBo.name!, mimeType: "image/png")
                     }
-                                        
+                    
                 }
                 
                 for (key, value) in parameters {
                     multipartFormData.append(((value as! String).data(using: .utf8))!, withName: key)
                 }}, to: AppConstant.savePostedFileUrl, method: .post, headers: headers,
-                    encodingCompletion: { encodingResult in
-                        switch encodingResult {
-                        case .success(let upload, _, _):
-                            upload.responseString { response in
-                                AppConstant.hideHUD()
-                                switch(response.result) {
-                                case .success(_):
-                                    debugPrint(response.result.value!)
-                                    let headerStatusCode : Int = (response.response?.statusCode)!
-                                    print("Status Code: \(headerStatusCode)")
-                                    
-                                    if(headerStatusCode == 401){//Session expired
-                                        self.isTokenVerified(completion: { (Bool) in
-                                            if Bool{
-                                                self.serviceCallToUploadAttachmentForRequests()
-                                            }
-                                        })
-                                    }else{
-                                        let dict = AppConstant.convertToDictionary(text: response.result.value!)
-                                        //  debugPrint(dict)
-                                        //self.arrImages.remove(at: i)
-                                        //self.tblAttachments.reloadData()
-                                        if let status = dict?["Status"] as? String {
-                                            if(status == "1"){
-                                                AppConstant.currClassName = self.className
-                                                if let msg = dict?["Message"] as? String{
-                                                    AppConstant.requestPopupMsg = msg
-                                                }
-                                                
-                                                AppConstant.selectedViewTag = "3"
-                                                NotificationCenter.default.post(name: NSNotification.Name(rawValue: StringConstant.requestReceivedNotification), object: nil)
-                                            }else{
-                                                AppConstant.showNetworkAlertMessage(apiName: AppConstant.savePostedFileUrl)
-                                            }
-                                        }
+                             encodingCompletion: { encodingResult in
+                switch encodingResult {
+                case .success(let upload, _, _):
+                    upload.responseString { response in
+                        AppConstant.hideHUD()
+                        switch(response.result) {
+                        case .success(_):
+                            debugPrint(response.result.value!)
+                            let headerStatusCode : Int = (response.response?.statusCode)!
+                            print("Status Code: \(headerStatusCode)")
+                            
+                            if(headerStatusCode == 401){//Session expired
+                                self.isTokenVerified(completion: { (Bool) in
+                                    if Bool{
+                                        self.serviceCallToUploadAttachmentForRequests()
                                     }
-                                    
-                                    break
-                                    
-                                case .failure(_):
-                                    AppConstant.showNetworkAlertMessage(apiName: AppConstant.savePostedFileUrl)
-                                    break
+                                })
+                            }else{
+                                let dict = AppConstant.convertToDictionary(text: response.result.value!)
+                                //  debugPrint(dict)
+                                //self.arrImages.remove(at: i)
+                                //self.tblAttachments.reloadData()
+                                if let status = dict?["Status"] as? String {
+                                    if(status == "1"){
+                                        AppConstant.currClassName = self.className
+                                        if let msg = dict?["Message"] as? String{
+                                            AppConstant.requestPopupMsg = msg
+                                        }
+                                        
+                                        AppConstant.selectedViewTag = "3"
+                                        NotificationCenter.default.post(name: NSNotification.Name(rawValue: StringConstant.requestReceivedNotification), object: nil)
+                                    }else{
+                                        AppConstant.showNetworkAlertMessage(apiName: AppConstant.savePostedFileUrl)
+                                    }
                                 }
-                                
                             }
-                        case .failure(let encodingError):
-                            AppConstant.hideHUD()
+                            
+                            break
+                            
+                        case .failure(_):
                             AppConstant.showNetworkAlertMessage(apiName: AppConstant.savePostedFileUrl)
+                            break
                         }
+                        
+                    }
+                case .failure(let encodingError):
+                    AppConstant.hideHUD()
+                    AppConstant.showNetworkAlertMessage(apiName: AppConstant.savePostedFileUrl)
+                }
             })
             
         }else{
@@ -659,9 +692,20 @@ class UploadFileViewController: BaseViewController,UITableViewDelegate,UITableVi
     func uploadImageToServer(){
         if(AppConstant.hasConnectivity()) {//true connected
             let imagesBo = self.arrImages[self.imageUploadedCount]
-             AppConstant.setHudTitle(title: "Uploading \(self.imageUploadedCount + 1) of \(self.arrImages.count)")
+            AppConstant.setHudTitle(title: "Uploading \(self.imageUploadedCount + 1) of \(self.arrImages.count)")
             
-                        
+            //            if let originalData = imagesBo.image?.jpegData(compressionQuality: 1.0) as NSData? {
+            //                let originalSizeKB = Double(originalData.length) / 1024.0
+            //                let originalSizeMB = originalSizeKB / 1024.0
+            //                print("Ukuran Gambar Asli (Sebelum Resize & Kompresi): \(originalSizeKB) KB (\(originalSizeMB) MB)")
+            //            }
+            //
+            //            if let compressedData = imagesBo.imgData {
+            //                let compressedSizeKB = Double(compressedData.length) / 1024.0
+            //                let compressedSizeMB = compressedSizeKB / 1024.0
+            //                print("Ukuran Gambar Setelah Resize & Kompresi: \(compressedSizeKB) KB (\(compressedSizeMB) MB)")
+            //            }
+            
             let imageStr = imagesBo.imgData!.base64EncodedString(options: NSData.Base64EncodingOptions(rawValue: 0))
             
             let parameters: Parameters = [
@@ -714,9 +758,9 @@ class UploadFileViewController: BaseViewController,UITableViewDelegate,UITableVi
                             if let status = dict?["Status"] as? String {
                                 print("Successsss")
                                 if(status == "1"){//Success
-//                                    if index < self.arrImages.count{
-//                                        self.arrImages.remove(at: index)
-//                                    }
+                                    //                                    if index < self.arrImages.count{
+                                    //                                        self.arrImages.remove(at: index)
+                                    //                                    }
                                     
                                     //self.tblAttachments.reloadData()
                                     
@@ -737,6 +781,7 @@ class UploadFileViewController: BaseViewController,UITableViewDelegate,UITableVi
                                         if AppConstant.imageUploadStartTime != nil{
                                             print("Upload start Time = \(AppConstant.imageUploadStartTime!)")
                                             print("Upload end Time = \(Date())")
+                                            
                                             AppConstant.imageUploadEndTime = Date()
                                             let time = AppConstant.imageUploadEndTime!.offsetFrom(ToDate: AppConstant.imageUploadStartTime!, FromDate: AppConstant.imageUploadEndTime!)
                                             
@@ -783,7 +828,7 @@ class UploadFileViewController: BaseViewController,UITableViewDelegate,UITableVi
                         break
                         
                     }
-            }
+                }
         }else{
             self.displayAlert(message: "Please check your internet connection.")
         }
@@ -860,6 +905,10 @@ class UploadFileViewController: BaseViewController,UITableViewDelegate,UITableVi
                                         if AppConstant.imageUploadStartTime != nil{
                                             print("Upload start Time = \(AppConstant.imageUploadStartTime!)")
                                             print("Upload end Time = \(Date())")
+                                            
+                                            //masukin print disini
+                                            
+                                            
                                             AppConstant.imageUploadEndTime = Date()
                                             let time = AppConstant.imageUploadEndTime!.offsetFrom(ToDate: AppConstant.imageUploadStartTime!, FromDate: AppConstant.imageUploadEndTime!)
                                             
@@ -903,7 +952,7 @@ class UploadFileViewController: BaseViewController,UITableViewDelegate,UITableVi
                         break
                         
                     }
-            }
+                }
         }else{
             self.displayAlert(message: "Please check your internet connection.")
         }
@@ -976,7 +1025,7 @@ class UploadFileViewController: BaseViewController,UITableViewDelegate,UITableVi
                         AppConstant.showNetworkAlertMessage(apiName: url)
                         break
                     }
-            }
+                }
         }else{
             self.displayAlert(message: "Please check your internet connection.")
         }
@@ -1050,7 +1099,7 @@ class UploadFileViewController: BaseViewController,UITableViewDelegate,UITableVi
                         break
                         
                     }
-            }
+                }
         }else{
             self.displayAlert(message: "Please check your internet connection.")
         }
@@ -1121,7 +1170,7 @@ class UploadFileViewController: BaseViewController,UITableViewDelegate,UITableVi
                         AppConstant.showNetworkAlertMessage(apiName: url)
                         break
                     }
-            }
+                }
         }else{
             self.displayAlert(message: "Please check your internet connection.")
         }
@@ -1129,12 +1178,16 @@ class UploadFileViewController: BaseViewController,UITableViewDelegate,UITableVi
     //MARK: Segue Method
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         self.view.endEditing(true)
-        if (segue.identifier == "viewDoc"){
+        if segue.identifier == "viewDoc" {
             let vc = segue.destination as! ViewDocumentViewController
             vc.arrImages = arrImages
             vc.pageHeader = pageHeader
             vc.scrolledToIndex = selectedIndex
-            return
+            print("Segue ke ViewDocumentViewController dengan index: \(selectedIndex)")
+        } else if segue.identifier == "showZoomImage" {
+            let zoomVC = segue.destination as! ZoomImageViewController
+            zoomVC.selectedImage = arrImages[selectedIndex].image
+            print("Segue ke ZoomImageViewController dengan index: \(selectedIndex)")
         }
     }
     
@@ -1167,7 +1220,7 @@ class UploadFileViewController: BaseViewController,UITableViewDelegate,UITableVi
         // Notify Child View Controller
         viewController.removeFromParent()
     }
-
+    
 }
 extension UIImage {
     enum JPEGQuality: CGFloat {
@@ -1190,7 +1243,7 @@ extension Date {
     func offsetFrom(ToDate : Date, FromDate : Date) -> String {
         let dayHourMinuteSecond: Set<Calendar.Component> = [.hour, .minute, .second]
         let difference = NSCalendar.current.dateComponents(dayHourMinuteSecond, from: ToDate, to: FromDate);
-
+        
         var seconds = "\(difference.second ?? 1) sec"
         if difference.second != nil{
             if seconds == "0 sec"{
@@ -1199,7 +1252,7 @@ extension Date {
         }
         let minutes = "\(difference.minute ?? 0) min" + ":" + seconds
         let hours = "\(difference.hour ?? 0) hr" + ":" + minutes
-
+        
         
         return hours
     }
