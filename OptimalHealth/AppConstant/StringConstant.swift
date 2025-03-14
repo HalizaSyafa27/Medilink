@@ -167,7 +167,8 @@ class StringConstant: NSObject {
     static var personalInfo : String = "MMWAINFO"
     static var BMICALCULATOR : String = "MMWA0230V2"
     static var HEALTHSCREENING : String = "MMWA0240V2"
-    static var Dokterin : String = "Dokterin"
+    /////////////////// KODE DOKTERIN
+//    static var Dokterin : String = "Dokterin"
     
     //TeleConsult ObjID
 //    static var teleconsult : String = "MMWA0193"

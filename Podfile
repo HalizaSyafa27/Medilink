@@ -8,6 +8,7 @@ target 'OptimalHealth' do
   # Pods for OptimalHealth Indonesia
 
 pod 'Alamofire', '4.9.1'
+pod 'AlamofireImage', '3.6.0'
 pod 'IQKeyboardManagerSwift'
 pod 'GoogleMaps'
 pod 'SwiftyJSON'
@@ -20,6 +21,7 @@ pod 'FloatRatingView'
 pod 'KMPlaceholderTextView'
 pod 'SVProgressHUD'
 pod 'GrowingTextView'
+
 pod 'SWXMLHash','= 5.0.1'
 pod 'JitsiMeetSDK', '~> 9.0.1'
 pod 'Firebase/Crashlytics'
@@ -41,17 +43,18 @@ pod 'QiscusMultichannelWidget', '~> 2.3.3'
     inherit! :search_paths
     # Pods for testing
   end
+end
   
   post_install do |installer|
-    installer.pods_project.build_configurations.each do |config|
-      	config.build_settings["EXCLUDED_ARCHS[sdk=iphonesimulator*]"] = "arm64"
-        config.build_settings["IPHONEOS_DEPLOYMENT_TARGET"] = "13.0"
-        
-        #@ade add: strip bitcode
-        #if target.name == 'Giphy'
-        #        `xcrun -sdk iphoneos bitcode_strip -r Pods/Giphy/GiphySDK/GiphyUISDK.xcframework/ios-arm64_armv7/GiphyUISDK.framework/GiphyUISDK -o Pods/Giphy/GiphySDK/GiphyUISDK.xcframework/ios-arm64_armv7/GiphyUISDK.framework/GiphyUISDK`
-        #end
+  installer.pods_project.targets.each do |target|
+    target.build_configurations.each do |config|
+      config.build_settings["EXCLUDED_ARCHS[sdk=iphonesimulator*]"] = "arm64"
+      config.build_settings["IPHONEOS_DEPLOYMENT_TARGET"] = "13.4"
+      config.build_settings['SWIFT_VERSION'] = '5.0'
     end
   end
-
 end
+
+
+
+

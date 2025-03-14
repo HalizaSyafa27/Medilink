@@ -826,10 +826,12 @@ class HomeViewController: BaseViewController, UICollectionViewDelegate, UICollec
                 vc.className = selectedMenu.OBJID
                 vc.subMenuItem = selectedMenu
                 self.navigationController?.pushViewController(vc, animated: true)
-            }else if(selectedMenu.OBJID == StringConstant.Dokterin){
-                className = selectedMenu.OBJID
-                self.serviceCallToGetDepedentList()
             }
+            ///////////////// KODE DOKTERIN //////////////////
+//            else if(selectedMenu.OBJID == StringConstant.Dokterin){
+//                className = selectedMenu.OBJID
+//                self.serviceCallToGetDepedentList()
+//            }
             
         }else if collectionView.tag == 103{//Bottom Menu
             AppConstant.isSlidingMenu = false
@@ -1133,14 +1135,15 @@ class HomeViewController: BaseViewController, UICollectionViewDelegate, UICollec
                                         }else{
                                             self.viewDynamicMenu.isHidden = false
                                         }
-                                          
-                                        let menuBo = MainMenuBo()
-                                        menuBo.apiName = "Dokterin"
-                                        menuBo.FDESC = "Dokterin"
-                                        menuBo.Image = "stethoscope.png"
-                                        menuBo.OBJID = "Dokterin"
-                                        menuBo.ORDSEQ = ""
-                                        self.arrMenus.append(menuBo)
+                                         
+                                          //////////////// MENU DOKTERIN /////////////////
+//                                        let menuBo = MainMenuBo()
+//                                        menuBo.apiName = "Dokterin"
+//                                        menuBo.FDESC = "Dokterin"
+//                                        menuBo.Image = "stethoscope.png"
+//                                        menuBo.OBJID = "Dokterin"
+//                                        menuBo.ORDSEQ = ""
+//                                        self.arrMenus.append(menuBo)
 
                                       } else {
                                         self.heightConstraintDynamicMenuView.constant = 0
@@ -1474,13 +1477,15 @@ class HomeViewController: BaseViewController, UICollectionViewDelegate, UICollec
                                                 }else{
                                                     self.performSegue(withIdentifier: "policy_info", sender: self)
                                                 }
-                                            }else if self.selectedMenu.OBJID == StringConstant.Dokterin{
-                                                if (self.memberDetailsbo.dependentArray.count > 0){
-                                                    self.performSegue(withIdentifier: "dependent_screen", sender: self)
-                                                }else{
-                                                    self.performSegue(withIdentifier: "policy_info", sender: self)
-                                                }
-                                            }else{
+                                            }
+//                                            else if self.selectedMenu.OBJID == StringConstant.Dokterin{
+//                                                if (self.memberDetailsbo.dependentArray.count > 0){
+//                                                    self.performSegue(withIdentifier: "dependent_screen", sender: self)
+//                                                }else{
+//                                                    self.performSegue(withIdentifier: "policy_info", sender: self)
+//                                                }
+//                                            }
+                                            else{
                                                 self.performSegue(withIdentifier: "dependent_screen", sender: self)
                                             }
                                         }

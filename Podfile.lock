@@ -246,6 +246,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire (= 4.9.1)
+  - AlamofireImage (= 3.6.0)
   - CryptoSwift
   - DatePickerDialog
   - DropDown
@@ -375,6 +376,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: f5b1bf1cd8dd53cd25887ac0eabcfd92301c6a5a
   SWXMLHash: 9cc0c2e4807926c74377724aa8722ee5707a0485
 
-PODFILE CHECKSUM: ea02596a1359b8978033d4a62ee5e3e092e947aa
+PODFILE CHECKSUM: d9050cbe575b7c93d5cc8d1074c8479382364915
 
 COCOAPODS: 1.16.2

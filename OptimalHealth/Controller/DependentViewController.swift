@@ -67,8 +67,9 @@ class DependentViewController: BaseViewController, UITableViewDelegate, UITableV
     var arrPlanCode = [PlanCodeBo]()
     var isFromSubmenuScreen = false
     
-    var dokterinToken = ""
-    var dokterinUrl = ""
+    /////////////////// KODE DOKTERIN
+//    var dokterinToken = ""
+//    var dokterinUrl = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -232,7 +233,9 @@ class DependentViewController: BaseViewController, UITableViewDelegate, UITableV
             viewbuttonContainer.addGestureRecognizer(tap1)
         }
         
-        if ((className == StringConstant.virtualCard) || (className == StringConstant.myEmployeeEntitlementBenefit) || (className == StringConstant.myTodayGLStatus) || (className == StringConstant.viewGLLetter) || (className == StringConstant.gl) || (className == StringConstant.claim) || (className == StringConstant.teleconsultAppoinments) || (className == StringConstant.teleconsultE_Prescription) || (className == StringConstant.teleconsultE_Lab) || (className == StringConstant.teleconsultE_Referral) || (className == StringConstant.selfDoctor) || (className == StringConstant.teleconsultHistory) || (className == StringConstant.teleconsultE_Delivery) || (className == StringConstant.Dokterin)){
+        if ((className == StringConstant.virtualCard) || (className == StringConstant.myEmployeeEntitlementBenefit) || (className == StringConstant.myTodayGLStatus) || (className == StringConstant.viewGLLetter) || (className == StringConstant.gl) || (className == StringConstant.claim) || (className == StringConstant.teleconsultAppoinments) || (className == StringConstant.teleconsultE_Prescription) || (className == StringConstant.teleconsultE_Lab) || (className == StringConstant.teleconsultE_Referral) || (className == StringConstant.selfDoctor) || (className == StringConstant.teleconsultHistory) || (className == StringConstant.teleconsultE_Delivery)
+//            || (className == StringConstant.Dokterin)
+        ){
             //Hide Topview1
             //Show TopView2
             viewProfile.isHidden = true
@@ -479,9 +482,10 @@ class DependentViewController: BaseViewController, UITableViewDelegate, UITableV
             self.performSegue(withIdentifier: "qr_scanner", sender: self)
         }else if className == StringConstant.virtualCard{
             self.performSegue(withIdentifier: "virtual_card_screen", sender: self)
-        }else if ((className == StringConstant.Dokterin)){
-            self.serviceCallToGetToken3dParty()
         }
+//        else if ((className == StringConstant.Dokterin)){
+//            self.serviceCallToGetToken3dParty()
+//        }
     }
     
     // MARK: Tableview Delegates & Datasource
@@ -1136,20 +1140,37 @@ class DependentViewController: BaseViewController, UITableViewDelegate, UITableV
                             }
                         })
                     } else {
-                        let dict = AppConstant.convertToDictionary(text: response.result.value!)
-                        if let status = dict!["Status"] as? String {
-                            if (status == "1") {
-                                let url = dict!["Url"] as! String
-                                self.dokterinToken = dict!["Token"] as! String
-                                self.dokterinUrl = "\(url)\(self.dokterinToken)"
-                                self.performSegue(withIdentifier: "dokterin", sender: self)
-                            } else {
-                                AppConstant.hideHUD()
-                                if let msg = dict!["Message"] as? String {
-                                    self.displayAlert(message: msg)
-                                }
+                        ///////////////////////INI KODE DOKTERIN
+//                        let dict = AppConstant.convertToDictionary(text: response.result.value!)
+//                        if let status = dict!["Status"] as? String {
+//                            if (status == "1") {
+//                                let url = dict!["Url"] as! String
+//                                self.dokterinToken = dict!["Token"] as! String
+//                                self.dokterinUrl = "\(url)\(self.dokterinToken)"
+//                                self.performSegue(withIdentifier: "dokterin", sender: self)
+//                            }
+//                            else {
+//                                AppConstant.hideHUD()
+//                                if let msg = dict!["Message"] as? String {
+//                                    self.displayAlert(message: msg)
+//                                }
+//                            }
+//                        }
+//                        else{
+//                            AppConstant.hideHUD()
+//                        }
+                        /////////////////////////////////////////////////////////
+                        
+                        if let responseValue = response.result.value,
+                           let dict = AppConstant.convertToDictionary(text: responseValue) {
+                            
+                            AppConstant.hideHUD()
+                            
+                            // Menampilkan alert jika ada pesan dari server
+                            if let msg = dict["Message"] as? String {
+                                self.displayAlert(message: msg)
                             }
-                        }else{
+                        } else {
                             AppConstant.hideHUD()
                         }
                     }
@@ -1279,13 +1300,15 @@ class DependentViewController: BaseViewController, UITableViewDelegate, UITableV
             vc.healthRiskAssessmentBo = healthRiskAssessmentBo
             vc.pageTitle = pageTitle
             return
-        }else if (segue.identifier == "dokterin"){
-            let vc = segue.destination as! DokterinViewController
-            vc.classname = className
-            vc.headerTitle = "Dokterin"
-            vc.myUrl = self.dokterinUrl
-            return
         }
+        /////////////////////// KODE DOKTERIN 
+//        else if (segue.identifier == "dokterin"){
+//            let vc = segue.destination as! DokterinViewController
+//            vc.classname = className
+//            vc.headerTitle = "Dokterin"
+//            vc.myUrl = self.dokterinUrl
+//            return
+//        }
     }
 }
 extension UIButton {

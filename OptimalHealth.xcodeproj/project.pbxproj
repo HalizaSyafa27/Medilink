@@ -7,8 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18AEDBAC91F482D9960C7CD5 /* Pods_OptimalHealth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE51EF47484A3FC97D68188A /* Pods_OptimalHealth.framework */; };
 		4B1F6FAF2D8142FB00288A68 /* ZoomImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4B1F6FAE2D8142FB00288A68 /* ZoomImageViewController.swift */; };
-		535DE9B37213F4478E2FFEC1 /* Pods_OptimalHealthUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27EB1F6A2EC7DE793ABEE3AD /* Pods_OptimalHealthUITests.framework */; };
+		4B3C48EA2D84222E00EA4C94 /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B3C48E92D84222E00EA4C94 /* CryptoSwift.framework */; };
+		4B3C48EC2D84223800EA4C94 /* FirebaseABTesting.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B3C48EB2D84223800EA4C94 /* FirebaseABTesting.framework */; };
+		55286B40CB8C31C83C3E1922 /* Pods_OptimalHealthUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A16F54F3A7B3848D044E7806 /* Pods_OptimalHealthUITests.framework */; };
 		7D3FCA5D2715656A00A92B4F /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3FCA5C2715656A00A92B4F /* BaseViewController.swift */; };
 		7D3FCA68271569E800A92B4F /* PresentationControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D3FCA67271569E800A92B4F /* PresentationControllerViewController.swift */; };
 		7D3FCA6D27156A7100A92B4F /* OverlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7D3FCA6C27156A7100A92B4F /* OverlayView.xib */; };
@@ -253,9 +256,8 @@
 		96AE52612858A18D009C4C34 /* LocalAuthentication.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93688BD42143E860001976A4 /* LocalAuthentication.framework */; };
 		96AE52652858A32F009C4C34 /* PushKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93728CA3248A1A5600E5C7EE /* PushKit.framework */; };
 		96BB1C8E28D3095B00B54600 /* WellnessTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96BB1C8D28D3095B00B54600 /* WellnessTableViewCell.swift */; };
-		A58149F38FB0210E12A137EF /* Pods_OptimalHealth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 789E705FEDB1E2B5BF3A6F20 /* Pods_OptimalHealth.framework */; };
+		A370C031ED7EF3BCAD52AB01 /* Pods_OptimalHealthTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9F25F639A43F8712543FE38B /* Pods_OptimalHealthTests.framework */; };
 		F8983CCC2D71630A006E98A7 /* DokterinViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8983CCB2D71630A006E98A7 /* DokterinViewController.swift */; };
-		FF3E74239BA1416483AC2832 /* Pods_OptimalHealthTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DE694506FBB76380329DD43 /* Pods_OptimalHealthTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -276,13 +278,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		27EB1F6A2EC7DE793ABEE3AD /* Pods_OptimalHealthUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OptimalHealthUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3B7C8C97B039D076EE038E7D /* Pods-OptimalHealth.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OptimalHealth.debug.xcconfig"; path = "Target Support Files/Pods-OptimalHealth/Pods-OptimalHealth.debug.xcconfig"; sourceTree = "<group>"; };
+		2DB8F4571F97E2C6633EFC24 /* Pods-OptimalHealth.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OptimalHealth.debug.xcconfig"; path = "Target Support Files/Pods-OptimalHealth/Pods-OptimalHealth.debug.xcconfig"; sourceTree = "<group>"; };
+		411DC2AD07099B24729D56BC /* Pods-OptimalHealthUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OptimalHealthUITests.debug.xcconfig"; path = "Target Support Files/Pods-OptimalHealthUITests/Pods-OptimalHealthUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		44FEF14F3F337D2D9C8CE01E /* Pods-OptimalHealthTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OptimalHealthTests.debug.xcconfig"; path = "Target Support Files/Pods-OptimalHealthTests/Pods-OptimalHealthTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4B1F6FAE2D8142FB00288A68 /* ZoomImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZoomImageViewController.swift; sourceTree = "<group>"; };
-		4DE694506FBB76380329DD43 /* Pods_OptimalHealthTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OptimalHealthTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7121317949CA8DC9864FA348 /* Pods-OptimalHealthUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OptimalHealthUITests.debug.xcconfig"; path = "Target Support Files/Pods-OptimalHealthUITests/Pods-OptimalHealthUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		789E705FEDB1E2B5BF3A6F20 /* Pods_OptimalHealth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OptimalHealth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7A4A8093352DEDB225082939 /* Pods-OptimalHealthTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OptimalHealthTests.release.xcconfig"; path = "Target Support Files/Pods-OptimalHealthTests/Pods-OptimalHealthTests.release.xcconfig"; sourceTree = "<group>"; };
+		4B3C48E92D84222E00EA4C94 /* CryptoSwift.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CryptoSwift.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4B3C48EB2D84223800EA4C94 /* FirebaseABTesting.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FirebaseABTesting.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7D3FCA5C2715656A00A92B4F /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		7D3FCA67271569E800A92B4F /* PresentationControllerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationControllerViewController.swift; sourceTree = "<group>"; };
 		7D3FCA6C27156A7100A92B4F /* OverlayView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OverlayView.xib; sourceTree = "<group>"; };
@@ -291,6 +292,8 @@
 		7D5809CB270D7F8E002328E1 /* ConfirmOTPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmOTPViewController.swift; sourceTree = "<group>"; };
 		7D5809D0270D804C002328E1 /* ChangePasswordByOTPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordByOTPViewController.swift; sourceTree = "<group>"; };
 		7DD61C1527E8918200DA9872 /* certificate.der */ = {isa = PBXFileReference; lastKnownFileType = file; path = certificate.der; sourceTree = SOURCE_ROOT; };
+		8D3C7215116D7222801C9B85 /* Pods-OptimalHealthTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OptimalHealthTests.release.xcconfig"; path = "Target Support Files/Pods-OptimalHealthTests/Pods-OptimalHealthTests.release.xcconfig"; sourceTree = "<group>"; };
+		8D512F7A18343459EB8B1072 /* Pods-OptimalHealth.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OptimalHealth.release.xcconfig"; path = "Target Support Files/Pods-OptimalHealth/Pods-OptimalHealth.release.xcconfig"; sourceTree = "<group>"; };
 		93028621213157EB0026615E /* StatusDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusDetailsViewController.swift; sourceTree = "<group>"; };
 		9302862421318D8A0026615E /* MyTodayGLStatusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTodayGLStatusViewController.swift; sourceTree = "<group>"; };
 		9303E6AD2B0F35C700EEA501 /* RatingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingViewController.swift; sourceTree = "<group>"; };
@@ -539,10 +542,11 @@
 		969C37C828D0A685005A1C9D /* ClaimsFormTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClaimsFormTableViewCell.swift; sourceTree = "<group>"; };
 		96ADCB982990F77F00DB439E /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
 		96BB1C8D28D3095B00B54600 /* WellnessTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WellnessTableViewCell.swift; sourceTree = "<group>"; };
-		A02666C8412811D6BA10F900 /* Pods-OptimalHealthTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OptimalHealthTests.debug.xcconfig"; path = "Target Support Files/Pods-OptimalHealthTests/Pods-OptimalHealthTests.debug.xcconfig"; sourceTree = "<group>"; };
-		C63E697A39550853BEDE37F2 /* Pods-OptimalHealthUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OptimalHealthUITests.release.xcconfig"; path = "Target Support Files/Pods-OptimalHealthUITests/Pods-OptimalHealthUITests.release.xcconfig"; sourceTree = "<group>"; };
-		E7A3EE57DA92050E09415941 /* Pods-OptimalHealth.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OptimalHealth.release.xcconfig"; path = "Target Support Files/Pods-OptimalHealth/Pods-OptimalHealth.release.xcconfig"; sourceTree = "<group>"; };
+		96C71A8734CFDC0E0616877F /* Pods-OptimalHealthUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OptimalHealthUITests.release.xcconfig"; path = "Target Support Files/Pods-OptimalHealthUITests/Pods-OptimalHealthUITests.release.xcconfig"; sourceTree = "<group>"; };
+		9F25F639A43F8712543FE38B /* Pods_OptimalHealthTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OptimalHealthTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A16F54F3A7B3848D044E7806 /* Pods_OptimalHealthUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OptimalHealthUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F8983CCB2D71630A006E98A7 /* DokterinViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DokterinViewController.swift; sourceTree = "<group>"; };
+		FE51EF47484A3FC97D68188A /* Pods_OptimalHealth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OptimalHealth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -550,12 +554,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4B3C48EC2D84223800EA4C94 /* FirebaseABTesting.framework in Frameworks */,
+				4B3C48EA2D84222E00EA4C94 /* CryptoSwift.framework in Frameworks */,
 				96AE52652858A32F009C4C34 /* PushKit.framework in Frameworks */,
 				96AE525D2858A18A009C4C34 /* CoreLocation.framework in Frameworks */,
 				96AE52612858A18D009C4C34 /* LocalAuthentication.framework in Frameworks */,
 				96463817292F3104009A02DE /* CloudKit.framework in Frameworks */,
 				96AE525F2858A18B009C4C34 /* HealthKit.framework in Frameworks */,
-				A58149F38FB0210E12A137EF /* Pods_OptimalHealth.framework in Frameworks */,
+				18AEDBAC91F482D9960C7CD5 /* Pods_OptimalHealth.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -563,7 +569,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF3E74239BA1416483AC2832 /* Pods_OptimalHealthTests.framework in Frameworks */,
+				A370C031ED7EF3BCAD52AB01 /* Pods_OptimalHealthTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -571,7 +577,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				535DE9B37213F4478E2FFEC1 /* Pods_OptimalHealthUITests.framework in Frameworks */,
+				55286B40CB8C31C83C3E1922 /* Pods_OptimalHealthUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -591,12 +597,12 @@
 		909A151CA04610E785207DDE /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				3B7C8C97B039D076EE038E7D /* Pods-OptimalHealth.debug.xcconfig */,
-				E7A3EE57DA92050E09415941 /* Pods-OptimalHealth.release.xcconfig */,
-				A02666C8412811D6BA10F900 /* Pods-OptimalHealthTests.debug.xcconfig */,
-				7A4A8093352DEDB225082939 /* Pods-OptimalHealthTests.release.xcconfig */,
-				7121317949CA8DC9864FA348 /* Pods-OptimalHealthUITests.debug.xcconfig */,
-				C63E697A39550853BEDE37F2 /* Pods-OptimalHealthUITests.release.xcconfig */,
+				2DB8F4571F97E2C6633EFC24 /* Pods-OptimalHealth.debug.xcconfig */,
+				8D512F7A18343459EB8B1072 /* Pods-OptimalHealth.release.xcconfig */,
+				44FEF14F3F337D2D9C8CE01E /* Pods-OptimalHealthTests.debug.xcconfig */,
+				8D3C7215116D7222801C9B85 /* Pods-OptimalHealthTests.release.xcconfig */,
+				411DC2AD07099B24729D56BC /* Pods-OptimalHealthUITests.debug.xcconfig */,
+				96C71A8734CFDC0E0616877F /* Pods-OptimalHealthUITests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -1238,15 +1244,17 @@
 		E7BD8BF79A9CD3D25E2E186C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				4B3C48EB2D84223800EA4C94 /* FirebaseABTesting.framework */,
+				4B3C48E92D84222E00EA4C94 /* CryptoSwift.framework */,
 				9376F3402B0C528D00FB5B56 /* Alamofire.framework */,
 				96463816292F3104009A02DE /* CloudKit.framework */,
 				93728CA3248A1A5600E5C7EE /* PushKit.framework */,
 				934E7FFE219C215900E89508 /* HealthKit.framework */,
 				93688BD42143E860001976A4 /* LocalAuthentication.framework */,
 				9331E1172123042C007F2FB8 /* CoreLocation.framework */,
-				789E705FEDB1E2B5BF3A6F20 /* Pods_OptimalHealth.framework */,
-				4DE694506FBB76380329DD43 /* Pods_OptimalHealthTests.framework */,
-				27EB1F6A2EC7DE793ABEE3AD /* Pods_OptimalHealthUITests.framework */,
+				FE51EF47484A3FC97D68188A /* Pods_OptimalHealth.framework */,
+				9F25F639A43F8712543FE38B /* Pods_OptimalHealthTests.framework */,
+				A16F54F3A7B3848D044E7806 /* Pods_OptimalHealthUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1258,13 +1266,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 93908F892112E6CB0060BD74 /* Build configuration list for PBXNativeTarget "OptimalHealth" */;
 			buildPhases = (
-				354FF3337ACF5CAD3A06C91D /* [CP] Check Pods Manifest.lock */,
+				598F0E38101B07D63227997E /* [CP] Check Pods Manifest.lock */,
 				93908F5D2112E6CB0060BD74 /* Sources */,
 				93908F5E2112E6CB0060BD74 /* Frameworks */,
 				93908F5F2112E6CB0060BD74 /* Resources */,
 				9314A9AB23C9AD5B00D5E8A3 /* ShellScript */,
-				2D7DE598C67241DB0AE0A1CC /* [CP] Embed Pods Frameworks */,
-				24B4785C2D7B79AAB383015C /* [CP] Copy Pods Resources */,
+				56575FADAFF020C84D453861 /* [CP] Embed Pods Frameworks */,
+				4F0E3F1CC7040A2AE546EACB /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1279,7 +1287,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 93908F8C2112E6CB0060BD74 /* Build configuration list for PBXNativeTarget "OptimalHealthTests" */;
 			buildPhases = (
-				8953CDE69B25547F1DE63224 /* [CP] Check Pods Manifest.lock */,
+				CFA16A3AD43EEDFE37F09F61 /* [CP] Check Pods Manifest.lock */,
 				93908F712112E6CB0060BD74 /* Sources */,
 				93908F722112E6CB0060BD74 /* Frameworks */,
 				93908F732112E6CB0060BD74 /* Resources */,
@@ -1298,7 +1306,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 93908F8F2112E6CB0060BD74 /* Build configuration list for PBXNativeTarget "OptimalHealthUITests" */;
 			buildPhases = (
-				7492E3E9A1B0E0B8B0017E6A /* [CP] Check Pods Manifest.lock */,
+				8D6952D8097B0105BC675E08 /* [CP] Check Pods Manifest.lock */,
 				93908F7C2112E6CB0060BD74 /* Sources */,
 				93908F7D2112E6CB0060BD74 /* Frameworks */,
 				93908F7E2112E6CB0060BD74 /* Resources */,
@@ -1441,7 +1449,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		24B4785C2D7B79AAB383015C /* [CP] Copy Pods Resources */ = {
+		4F0E3F1CC7040A2AE546EACB /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1460,7 +1468,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OptimalHealth/Pods-OptimalHealth-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		2D7DE598C67241DB0AE0A1CC /* [CP] Embed Pods Frameworks */ = {
+		56575FADAFF020C84D453861 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1572,7 +1580,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-OptimalHealth/Pods-OptimalHealth-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		354FF3337ACF5CAD3A06C91D /* [CP] Check Pods Manifest.lock */ = {
+		598F0E38101B07D63227997E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1594,7 +1602,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		7492E3E9A1B0E0B8B0017E6A /* [CP] Check Pods Manifest.lock */ = {
+		8D6952D8097B0105BC675E08 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1610,28 +1618,6 @@
 			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-OptimalHealthUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8953CDE69B25547F1DE63224 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-OptimalHealthTests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1655,6 +1641,28 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n";
+		};
+		CFA16A3AD43EEDFE37F09F61 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OptimalHealthTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -2023,9 +2031,10 @@
 		};
 		93908F8A2112E6CB0060BD74 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3B7C8C97B039D076EE038E7D /* Pods-OptimalHealth.debug.xcconfig */;
+			baseConfigurationReference = 2DB8F4571F97E2C6633EFC24 /* Pods-OptimalHealth.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = OptimalHealth/OptimalHealth.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
@@ -2034,13 +2043,237 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 5CCCQW7FJ8;
 				ENABLE_BITCODE = NO;
+				ENABLE_CODE_COVERAGE = YES;
 				EXCLUDED_ARCHS = "";
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/Alamofire\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/AlamofireImage\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/CocoaMQTT\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/CryptoSwift\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/DatePickerDialog\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/DropDown\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseABTesting\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseCore\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseCoreExtension\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseCoreInternal\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseCrashlytics\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseInstallations\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebasePerformance\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseRemoteConfig\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseRemoteConfigInterop\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseSessions\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FirebaseSharedSwift\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/FloatRatingView\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/GoogleDataTransport\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/GoogleUtilities\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/GrowingTextView\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/IQKeyboardCore\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/IQKeyboardManagerSwift\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/IQKeyboardNotification\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/IQKeyboardReturnManager\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/IQKeyboardToolbar\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/IQKeyboardToolbarManager\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/IQTextInputViewNotification\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/IQTextView\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/ImageScrollView\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/KMPlaceholderTextView\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/MqttCocoaAsyncSocket\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/PromisesObjC\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/PromisesSwift\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/QiscusCore\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/QiscusMultichannelWidget\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/QiscusRealtime\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/RSKImageCropperSwift\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SDWebImage\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SDWebImageWebPCoder\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SVProgressHUD\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SWXMLHash\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/SwiftyJSON\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/libwebp\"",
+					"\"${PODS_CONFIGURATION_BUILD_DIR}/nanopb\"",
+					"\"${PODS_ROOT}/FirebaseAnalytics/Frameworks\"",
+					"\"${PODS_ROOT}/Giphy/GiphySDK\"",
+					"\"${PODS_ROOT}/GoogleAppMeasurement/Frameworks\"",
+					"\"${PODS_ROOT}/GoogleMaps/Base/Frameworks\"",
+					"\"${PODS_ROOT}/GoogleMaps/Maps/Frameworks\"",
+					"\"${PODS_ROOT}/JitsiMeetSDK/Frameworks\"",
+					"\"${PODS_ROOT}/JitsiWebRTC\"",
+					"\"${PODS_XCFRAMEWORKS_BUILD_DIR}/FirebaseAnalytics/AdIdSupport\"",
+					"\"${PODS_XCFRAMEWORKS_BUILD_DIR}/Giphy\"",
+					"\"${PODS_XCFRAMEWORKS_BUILD_DIR}/GoogleAppMeasurement/AdIdSupport\"",
+					"\"${PODS_XCFRAMEWORKS_BUILD_DIR}/GoogleAppMeasurement/WithoutAdIdSupport\"",
+					"\"${PODS_XCFRAMEWORKS_BUILD_DIR}/GoogleMaps/Base\"",
+					"\"${PODS_XCFRAMEWORKS_BUILD_DIR}/GoogleMaps/Maps\"",
+					"\"${PODS_XCFRAMEWORKS_BUILD_DIR}/JitsiMeetSDK\"",
+					"\"${PODS_XCFRAMEWORKS_BUILD_DIR}/JitsiWebRTC\"",
+					"$(PODS_ROOT)",
+					"$(PODS_CONFIGURATION_BUILD_DIR)",
+				);
 				INFOPLIST_FILE = OptimalHealth/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = MediDoc;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 2.11;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"c++\"",
+					"-l\"sqlite3\"",
+					"-l\"z\"",
+					"-framework",
+					"\"AVFoundation\"",
+					"-framework",
+					"\"Accelerate\"",
+					"-framework",
+					"\"Alamofire\"",
+					"-framework",
+					"\"AlamofireImage\"",
+					"-framework",
+					"\"CFNetwork\"",
+					"-framework",
+					"\"CocoaMQTT\"",
+					"-framework",
+					"\"Combine\"",
+					"-framework",
+					"\"CoreData\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"CoreImage\"",
+					"-framework",
+					"\"CoreLocation\"",
+					"-framework",
+					"\"CoreTelephony\"",
+					"-framework",
+					"-framework",
+					"\"CryptoSwift\"",
+					"-framework",
+					"\"DatePickerDialog\"",
+					"-framework",
+					"\"DropDown\"",
+					"-framework",
+					"\"FBLPromises\"",
+					"-framework",
+					"\"-weak_library /Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/arc/libarclite_iphoneos.a\"",
+					"\"FirebaseABTesting\"",
+					"-framework",
+					"\"FirebaseAnalytics\"",
+					"-framework",
+					"\"FirebaseCore\"",
+					"-framework",
+					"\"FirebaseCoreExtension\"",
+					"-framework",
+					"\"FirebaseCoreInternal\"",
+					"-framework",
+					"\"FirebaseCrashlytics\"",
+					"-framework",
+					"\"FirebaseInstallations\"",
+					"-framework",
+					"\"FirebasePerformance\"",
+					"-framework",
+					"\"FirebaseRemoteConfig\"",
+					"-framework",
+					"\"FirebaseRemoteConfigInterop\"",
+					"-framework",
+					"\"FirebaseSessions\"",
+					"-framework",
+					"\"FirebaseSharedSwift\"",
+					"-framework",
+					"\"FloatRatingView\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"GLKit\"",
+					"-framework",
+					"\"GiphyUISDK\"",
+					"-framework",
+					"\"GoogleAppMeasurement\"",
+					"-framework",
+					"\"GoogleAppMeasurementIdentitySupport\"",
+					"-framework",
+					"\"GoogleDataTransport\"",
+					"-framework",
+					"\"GoogleMaps\"",
+					"-framework",
+					"\"GoogleMapsBase\"",
+					"-framework",
+					"\"GoogleMapsCore\"",
+					"-framework",
+					"\"GoogleUtilities\"",
+					"-framework",
+					"\"GrowingTextView\"",
+					"-framework",
+					"\"IQKeyboardCore\"",
+					"-framework",
+					"\"IQKeyboardManagerSwift\"",
+					"-framework",
+					"\"IQKeyboardNotification\"",
+					"-framework",
+					"\"IQKeyboardReturnManager\"",
+					"-framework",
+					"\"IQKeyboardToolbar\"",
+					"-framework",
+					"\"IQKeyboardToolbarManager\"",
+					"-framework",
+					"\"IQTextInputViewNotification\"",
+					"-framework",
+					"\"IQTextView\"",
+					"-framework",
+					"\"ImageIO\"",
+					"-framework",
+					"\"ImageScrollView\"",
+					"-framework",
+					"\"JitsiMeetSDK\"",
+					"-framework",
+					"\"KMPlaceholderTextView\"",
+					"-framework",
+					"\"Metal\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"MqttCocoaAsyncSocket\"",
+					"-framework",
+					"\"OpenGLES\"",
+					"-framework",
+					"\"Promises\"",
+					"-framework",
+					"\"QiscusCore\"",
+					"-framework",
+					"\"QiscusMultichannelWidget\"",
+					"-framework",
+					"\"QiscusRealtime\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"RSKImageCropperSwift\"",
+					"-framework",
+					"\"SDWebImage\"",
+					"-framework",
+					"\"SDWebImageWebPCoder\"",
+					"-framework",
+					"\"SVProgressHUD\"",
+					"-framework",
+					"\"SWXMLHash\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"StoreKit\"",
+					"-framework",
+					"\"SwiftyJSON\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"UIKit\"",
+					"-framework",
+					"\"WebRTC\"",
+					"-framework",
+					"\"libwebp\"",
+					"-framework",
+					"\"nanopb\"",
+				);
+				PODS_ROOT = " ";
 				PRODUCT_BUNDLE_IDENTIFIER = com.medilink.appname;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
@@ -2061,9 +2294,10 @@
 		};
 		93908F8B2112E6CB0060BD74 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E7A3EE57DA92050E09415941 /* Pods-OptimalHealth.release.xcconfig */;
+			baseConfigurationReference = 8D512F7A18343459EB8B1072 /* Pods-OptimalHealth.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				BUILD_LIBRARY_FOR_DISTRIBUTION = NO;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = OptimalHealth/OptimalHealth.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
@@ -2072,14 +2306,173 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 5CCCQW7FJ8;
 				ENABLE_BITCODE = NO;
+				ENABLE_CODE_COVERAGE = YES;
 				EXCLUDED_ARCHS = "";
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				INFOPLIST_FILE = OptimalHealth/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = MediDoc;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MARKETING_VERSION = 2.11;
 				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-ObjC",
+					"-l\"c++\"",
+					"-l\"sqlite3\"",
+					"-l\"z\"",
+					"-framework",
+					"\"AVFoundation\"",
+					"-framework",
+					"\"Accelerate\"",
+					"-framework",
+					"\"Alamofire\"",
+					"-framework",
+					"\"AlamofireImage\"",
+					"-framework",
+					"\"CFNetwork\"",
+					"-framework",
+					"\"CocoaMQTT\"",
+					"-framework",
+					"\"Combine\"",
+					"-framework",
+					"\"CoreData\"",
+					"-framework",
+					"\"CoreGraphics\"",
+					"-framework",
+					"\"CoreImage\"",
+					"-framework",
+					"\"CoreLocation\"",
+					"-framework",
+					"\"CoreTelephony\"",
+					"-framework",
+					"-framework",
+					"\"CryptoSwift\"",
+					"-framework",
+					"\"DatePickerDialog\"",
+					"-framework",
+					"\"DropDown\"",
+					"-framework",
+					"\"FBLPromises\"",
+					"-framework",
+					"\"-weak_library /Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/arc/libarclite_iphoneos.a\"",
+					"\"FirebaseABTesting\"",
+					"-framework",
+					"\"FirebaseAnalytics\"",
+					"-framework",
+					"\"FirebaseCore\"",
+					"-framework",
+					"\"FirebaseCoreExtension\"",
+					"-framework",
+					"\"FirebaseCoreInternal\"",
+					"-framework",
+					"\"FirebaseCrashlytics\"",
+					"-framework",
+					"\"FirebaseInstallations\"",
+					"-framework",
+					"\"FirebasePerformance\"",
+					"-framework",
+					"\"FirebaseRemoteConfig\"",
+					"-framework",
+					"\"FirebaseRemoteConfigInterop\"",
+					"-framework",
+					"\"FirebaseSessions\"",
+					"-framework",
+					"\"FirebaseSharedSwift\"",
+					"-framework",
+					"\"FloatRatingView\"",
+					"-framework",
+					"\"Foundation\"",
+					"-framework",
+					"\"GLKit\"",
+					"-framework",
+					"\"GiphyUISDK\"",
+					"-framework",
+					"\"GoogleAppMeasurement\"",
+					"-framework",
+					"\"GoogleAppMeasurementIdentitySupport\"",
+					"-framework",
+					"\"GoogleDataTransport\"",
+					"-framework",
+					"\"GoogleMaps\"",
+					"-framework",
+					"\"GoogleMapsBase\"",
+					"-framework",
+					"\"GoogleMapsCore\"",
+					"-framework",
+					"\"GoogleUtilities\"",
+					"-framework",
+					"\"GrowingTextView\"",
+					"-framework",
+					"\"IQKeyboardCore\"",
+					"-framework",
+					"\"IQKeyboardManagerSwift\"",
+					"-framework",
+					"\"IQKeyboardNotification\"",
+					"-framework",
+					"\"IQKeyboardReturnManager\"",
+					"-framework",
+					"\"IQKeyboardToolbar\"",
+					"-framework",
+					"\"IQKeyboardToolbarManager\"",
+					"-framework",
+					"\"IQTextInputViewNotification\"",
+					"-framework",
+					"\"IQTextView\"",
+					"-framework",
+					"\"ImageIO\"",
+					"-framework",
+					"\"ImageScrollView\"",
+					"-framework",
+					"\"JitsiMeetSDK\"",
+					"-framework",
+					"\"KMPlaceholderTextView\"",
+					"-framework",
+					"\"Metal\"",
+					"-framework",
+					"\"MobileCoreServices\"",
+					"-framework",
+					"\"MqttCocoaAsyncSocket\"",
+					"-framework",
+					"\"OpenGLES\"",
+					"-framework",
+					"\"Promises\"",
+					"-framework",
+					"\"QiscusCore\"",
+					"-framework",
+					"\"QiscusMultichannelWidget\"",
+					"-framework",
+					"\"QiscusRealtime\"",
+					"-framework",
+					"\"QuartzCore\"",
+					"-framework",
+					"\"RSKImageCropperSwift\"",
+					"-framework",
+					"\"SDWebImage\"",
+					"-framework",
+					"\"SDWebImageWebPCoder\"",
+					"-framework",
+					"\"SVProgressHUD\"",
+					"-framework",
+					"\"SWXMLHash\"",
+					"-framework",
+					"\"Security\"",
+					"-framework",
+					"\"StoreKit\"",
+					"-framework",
+					"\"SwiftyJSON\"",
+					"-framework",
+					"\"SystemConfiguration\"",
+					"-framework",
+					"\"UIKit\"",
+					"-framework",
+					"\"WebRTC\"",
+					"-framework",
+					"\"libwebp\"",
+					"-framework",
+					"\"nanopb\"",
+				);
+				PODS_ROOT = " ";
 				PRODUCT_BUNDLE_IDENTIFIER = com.medilink.appname;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -2098,13 +2491,14 @@
 		};
 		93908F8D2112E6CB0060BD74 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A02666C8412811D6BA10F900 /* Pods-OptimalHealthTests.debug.xcconfig */;
+			baseConfigurationReference = 44FEF14F3F337D2D9C8CE01E /* Pods-OptimalHealthTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DDR93DGX6A;
 				INFOPLIST_FILE = OptimalHealthTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.oditek.OptimalHealthTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2116,13 +2510,14 @@
 		};
 		93908F8E2112E6CB0060BD74 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7A4A8093352DEDB225082939 /* Pods-OptimalHealthTests.release.xcconfig */;
+			baseConfigurationReference = 8D3C7215116D7222801C9B85 /* Pods-OptimalHealthTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DDR93DGX6A;
 				INFOPLIST_FILE = OptimalHealthTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.oditek.OptimalHealthTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2134,12 +2529,13 @@
 		};
 		93908F902112E6CB0060BD74 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7121317949CA8DC9864FA348 /* Pods-OptimalHealthUITests.debug.xcconfig */;
+			baseConfigurationReference = 411DC2AD07099B24729D56BC /* Pods-OptimalHealthUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DDR93DGX6A;
 				INFOPLIST_FILE = OptimalHealthUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.oditek.OptimalHealthUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2151,12 +2547,13 @@
 		};
 		93908F912112E6CB0060BD74 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C63E697A39550853BEDE37F2 /* Pods-OptimalHealthUITests.release.xcconfig */;
+			baseConfigurationReference = 96C71A8734CFDC0E0616877F /* Pods-OptimalHealthUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DDR93DGX6A;
 				INFOPLIST_FILE = OptimalHealthUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.4;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.oditek.OptimalHealthUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
